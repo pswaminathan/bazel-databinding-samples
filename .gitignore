@@ -1,0 +1,51 @@
+# gitignore template for Bazel build system
+# website: https://bazel.build/
+
+# Ignore all bazel-* symlinks. There is no full list since this can change
+# based on the name of the directory bazel is cloned into.
+/bazel-*
+!/bazel-*.sublime-project
+
+# Directories for the Bazel IntelliJ plugin containing the generated
+# IntelliJ project files and plugin configuration. Seperate directories are
+# for the IntelliJ, Android Studio and CLion versions of the plugin.
+.ijwb
+.aswb
+.clwb
+
+# The next-gen Bazel IntelliJ plugin uses the Build Server Protocol,
+.bazelbsp
+
+.DS_Store
+
+# Sublime Text workspace files
+*.sublime-workspace
+
+local.bazelrc
+.idea
+
+*.mobileprovision
+*.xcodeproj
+
+# swift_bazel intermediate build directory
+.build
+node_modules
+
+# bin
+refresh_race_stats*
+
+# codecov
+codecov
+genhtml
+
+# Cache GCP service account auth
+conf/bazel-tools-*.json
+
+# Crashlytics generated binary directory
+.crashlytics
+
+# User-generated workflows for testing
+.github/workflows/local
+
+# Python 3 module cache
+__pycache__

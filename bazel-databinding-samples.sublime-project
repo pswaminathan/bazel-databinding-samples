@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"folder_exclude_patterns": [
+				"bazel-*",
+				".aswb",
+				".ijwb",
+				".build",
+			]
+		}
+	],
+	"settings": {
+		"lsp_format_on_save": true,
+		"LSP": {
+			"gopls": {
+				"enabled": true,
+				"command": ["~/go/bin/gopls"],
+				"selector": "source.go",
+				"settings": {
+					"gopls.directoryFilters": [
+						"-bazel-bin",
+						"-bazel-out",
+						"-bazel-testlogs",
+						"-bazel-databinding-samples",
+					],
+					"gopls.allowImplicitNetworkAccess": false,
+					"gopls.usePlaceholders": true,
+					"gopls.gofumpt": true,
+					"gopls.semanticTokens": true,
+					"gopls.codelenses": {
+						"gc_details": false,
+						"regenerate_cgo": false,
+						"generate": false,
+						"test": false,
+						"tidy": false,
+						"upgrade_dependency": false,
+						"vendor": false
+					}
+				},
+				"env": {
+					"GOPACKAGESDRIVER": "./tools/gopackagesdriver.sh"
+				}
+			}
+		}
+	}
+}

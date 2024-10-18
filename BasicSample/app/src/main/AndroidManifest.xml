@@ -16,7 +16,12 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.android.databinding.basicsample">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.example.android.databinding.basicsample.lib">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="31" />
 
     <application
         android:allowBackup="true"
@@ -33,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ObservableFieldActivity"
+        <activity android:name="${applicationId}.ui.ObservableFieldActivity"
                   android:label="ObservableField Activity"
             android:exported="true">
             <intent-filter>
@@ -42,7 +47,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ViewModelActivity"
+        <activity android:name="${applicationId}.ui.ViewModelActivity"
                   android:label="ViewModel Activity"
             android:exported="true">
             <intent-filter>
@@ -51,6 +56,18 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge"
+            >
+            <meta-data
+                android:name="com.example.android.databinding.basicsample"
+                android:value="androidx.startup"
+                />
+        </provider>
     </application>
 
 </manifest>

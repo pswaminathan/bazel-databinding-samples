@@ -20,8 +20,8 @@ import android.content.Intent
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.android.databinding.basicsample.R
-import com.example.android.databinding.basicsample.databinding.ActivityMainBinding
+import com.example.android.databinding.basicsample.lib.R
+import com.example.android.databinding.basicsample.lib.databinding.ActivityMainBinding
 
 /**
  * Shows a menu.

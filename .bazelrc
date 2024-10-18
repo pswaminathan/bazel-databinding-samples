@@ -1,0 +1,22 @@
+common --noenable_bzlmod
+
+build --experimental_strict_java_deps=off  # cf. https://github.com/bazelbuild/bazel/issues/13647
+
+build --define=android_dexmerger_tool=d8_dexmerger
+build --define=android_incremental_dexing_tool=d8_dexbuilder
+build --define=android_standalone_dexing_tool=d8_compat_dx
+
+build --experimental_android_databinding_v2
+build --android_databinding_use_v3_4_args
+build --android_databinding_use_androidx
+build --experimental_google_legacy_api
+query --experimental_google_legacy_api
+
+build --strategy=DatabindingStubs=worker
+
+common --java_runtime_version=remotejdk_17
+common --tool_java_runtime_version=remotejdk_17
+
+build --incompatible_strict_action_env
+
+common:localgrab --override_repository="grab_bazel_common=/Users/p/Code/bazel/grab-bazel-common"

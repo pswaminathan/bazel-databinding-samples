@@ -23,7 +23,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android.databinding.basicsample.BR
+// import com.example.android.databinding.basicsample.lib.BR  // FIXME
 import com.example.android.databinding.basicsample.util.ObservableViewModel
 
 
@@ -68,7 +68,7 @@ class ProfileObservableViewModel : ObservableViewModel() {
     fun onLike() {
         likes.increment()
         // You control when the @Bindable properties are updated using `notifyPropertyChanged()`.
-        notifyPropertyChanged(BR.popularity)
+        // notifyPropertyChanged(BR.popularity)
     }
 
     @Bindable

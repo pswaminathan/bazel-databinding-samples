@@ -23,7 +23,6 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
 
-        <import type="com.example.android.databinding.basicsample.R"/>
         <import type="com.example.android.databinding.basicsample.util.ConverterUtil"/>
         <variable
             name="user"
@@ -80,7 +79,7 @@
             app:layout_constraintVertical_bias="0.0"
             app:layout_constraintVertical_chainStyle="packed"
             app:tint="@{user.likes &gt; 9 ? @color/star : @android:color/black}"
-            app:srcCompat="@{user.likes &lt; 4 ? R.drawable.ic_person_black_96dp : R.drawable.ic_whatshot_black_96dp }"/>
+        />
 
         <!-- Conversions like Integer to String are expressions simple enough for the layout. An
         alternative would be to create a getter in the ViewModel for likes as a String. -->

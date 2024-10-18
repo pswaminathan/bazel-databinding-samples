@@ -24,9 +24,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ObservableInt
-import com.example.android.databinding.basicsample.R
+import com.example.android.databinding.basicsample.lib.R
 import com.example.android.databinding.basicsample.data.ObservableFieldProfile
-import com.example.android.databinding.basicsample.databinding.ObservableFieldProfileBinding
+import com.example.android.databinding.basicsample.lib.databinding.ObservableFieldProfileBinding
 
 /**
  * This activity shows shows static data and lets the user increment the

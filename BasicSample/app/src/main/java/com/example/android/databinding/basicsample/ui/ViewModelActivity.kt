@@ -20,9 +20,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.android.databinding.basicsample.R
+import com.example.android.databinding.basicsample.lib.R
 import com.example.android.databinding.basicsample.data.ProfileLiveDataViewModel
-import com.example.android.databinding.basicsample.databinding.ViewmodelProfileBinding
+import com.example.android.databinding.basicsample.lib.databinding.ViewmodelProfileBinding
 
 /**
  * This activity uses a [androidx.lifecycle.ViewModel] to hold the data and respond to user

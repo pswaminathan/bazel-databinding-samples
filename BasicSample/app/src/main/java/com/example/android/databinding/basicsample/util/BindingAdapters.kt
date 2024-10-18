@@ -26,17 +26,18 @@ import androidx.core.widget.ImageViewCompat
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
-import com.example.android.databinding.basicsample.R
+import com.example.android.databinding.basicsample.lib.R
 import com.example.android.databinding.basicsample.data.Popularity
 
 
 object BindingAdapters {
     /**
-     * A Binding Adapter that is called whenever the value of the attribute `app:popularityIcon`
+     * A Binding Adapter that is called whenever the value of the attribute `popularityIcon`
      * changes. Receives a popularity level that determines the icon and tint color to use.
      */
-    @BindingAdapter("app:popularityIcon")
-    @JvmStatic fun popularityIcon(view: ImageView, popularity: Popularity) {
+    @BindingAdapter("popularityIcon")
+    @JvmStatic
+    fun popularityIcon(view: ImageView, popularity: Popularity) {
 
         val color = getAssociatedColor(popularity, view.context)
 
@@ -49,8 +50,9 @@ object BindingAdapters {
      * A Binding Adapter that is called whenever the value of the attribute `android:progressTint`
      * changes. Depending on the value it determines the color of the progress bar.
      */
-    @BindingAdapter("app:progressTint")
-    @JvmStatic fun tintPopularity(view: ProgressBar, popularity: Popularity) {
+    @BindingAdapter("progressTint")
+    @JvmStatic
+    fun tintPopularity(view: ProgressBar, popularity: Popularity) {
 
         val color = getAssociatedColor(popularity, view.context)
 
@@ -65,8 +67,9 @@ object BindingAdapters {
      *  Showcases Binding Adapters with multiple attributes. Note that this adapter is called
      *  whenever any of the attribute changes.
      */
-    @BindingAdapter(value = ["app:progressScaled", "android:max"], requireAll = true)
-    @JvmStatic fun setProgress(progressBar: ProgressBar, likes: Int, max: Int) {
+    @BindingAdapter(value = ["progressScaled", "android:max"], requireAll = true)
+    @JvmStatic
+    fun setProgress(progressBar: ProgressBar, likes: Int, max: Int) {
         progressBar.progress = (likes * max / 5).coerceAtMost(max)
     }
 
@@ -74,8 +77,9 @@ object BindingAdapters {
      * Unused Binding Adapter to replace the Binding Converter that hides a view if the number
      * of likes is zero.
      */
-    @BindingAdapter("app:hideIfZero")
-    @JvmStatic fun hideIfZero(view: View, number: Int) {
+    @BindingAdapter("hideIfZero")
+    @JvmStatic
+    fun hideIfZero(view: View, number: Int) {
         view.visibility = if (number == 0) View.GONE else View.VISIBLE
     }
 
