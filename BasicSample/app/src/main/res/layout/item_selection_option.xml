@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="Object" />
+        <variable
+            name="itemContext"
+            type="com.example.android.databinding.basicsample.data.Selection" />
+    </data>
+    <androidx.appcompat.widget.AppCompatTextView
+        tools:text="Newest First"
+        android:padding="16dp"
+        android:text="@{String.valueOf(item)}"
+        app:selected="@{itemContext.value == item}"
+        android:onClick="@{() -> itemContext.setValue(item)}"
+        android:singleLine="true" />
+</layout>
